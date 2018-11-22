@@ -1,14 +1,5 @@
-import axios from 'axios';
+import Search from './models/Search';
 
-async function getResults(query) {
-    const key = 'df4647627bd4df1caaa22b36efeed70a';
-    try {
-        const res = await axios(`https://www.food2fork.com/api/search?key=${key}&q=${query}`);
-        const recipes = res.data.recipes;
-        console.log(recipes);
-    } catch (error) {
-        alert(error);
-    }
-
-}
-getResults('tomato pasta');
+const search = new Search('pizza');
+console.log(search);
+search.getResults();
