@@ -9,9 +9,8 @@ export default class Search {
     async getResults() {   // We delete the keyword "function" because getResults is an asynchronous method of this class 
     
         try {
-            console.log('Aici');
-            const res = await axios(`https://www.food2fork.com/api/search?key=${key}&q=${this.query}`);
-            this.result = res.data.recipes;
+            const res = await axios(`${proxy}https://www.food2fork.com/api/search?key=${key}&q=${this.query}`);
+            this.result = res.data.recipes; 
         } catch (error) {
             alert(error);
         }
