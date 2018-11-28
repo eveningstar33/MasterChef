@@ -10,6 +10,7 @@ export default class Likes {
             author,
             img
         };
+        this.likes.push(like);
     }
 
     deleteLike(id) {
@@ -19,5 +20,9 @@ export default class Likes {
 
     isLiked(id) {
         return this.likes.findIndex(el => el.id === id) !== -1;
+    }
+
+    getNumLikes() {
+        return this.likes.length;
     }
 }
